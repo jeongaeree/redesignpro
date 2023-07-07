@@ -47,16 +47,7 @@ $(document).ready(function(){
     })
 
 
-    // $(".midbot>.btn").click(function(){
-    //     $(".tabMenu>.fold").addClass("on")
-    //     $(".tabMenu>.home").removeClass("on")
-
-    //     $(".tabMenu>.foldtxt").addClass("on")
-    //     $(".tabMenu>.hometxt").removeClass("on")
-
-    // })
-
-
+   
     $(window).scroll(function(){
         let winst = $(window).scrollTop()
         let con2top = $("#skill").offset().top
@@ -95,18 +86,7 @@ $(document).ready(function(){
     
         })
 
-
-        
-    // $(window).scroll(function(){
-        
-    //     var here = $("#skill").offset().top;
-    //     var height = $(document).scrollTop();
-
-    //         if(here == height){
-    //             alert("도착했습니다.");
-    //         }
-    // })
-
+   
     
          
     $(window).scroll(function(){
@@ -156,7 +136,51 @@ $(document).ready(function(){
 
     })
 
+    $(".btnclosepop").click(function(){
+        $(".popuptxt").hide();
+    })
+    $(".popupList>div").click(function(){
+        $(".popuptxt").show();
+    })   
+
+   
+    $(".popupList>div").click(function(){
+        let idx = $(this).index()
+        $(".popuptxt").addClass("on")
+        $(".popuptxt>ul>li").removeClass("on")
+        $(".popuptxt>ul>li").eq(idx).addClass("on")
+
+
+        
+        
+    })
+
+
+    // $(".morebtn>a").click(function(e){
+    //     e.preventDefault() 
+    //     let target = $(this).attr("href")
+    //     let bbbstop = $("#retwo").offset().top
+        
+    //     moveScroll({top:bbbstop,speed:1000})
+
+    // })
+    // function moveScroll(option){
+    //     $("html,body").stop().animate({scrollTop:option.top},option.speed)
+    // }
+
+    $(".morebtn").click(function(event){         
+
+        event.preventDefault();
+
+        var height = $(".morebtn").offset();
+
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+
+    });
+
     
+    
+
  
 
 
